@@ -7,6 +7,7 @@
     "@babel/core": "^7.24.4",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "global": "^4.4.0"
+    "global": "^4.4.0",
+    "prettier": "^3.2.5"
   }
 }
