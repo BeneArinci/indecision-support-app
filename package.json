@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "babel-version": "babel --version"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.24.1",
+    "@babel/core": "^7.24.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "global": "^4.4.0"
+  }
+}
