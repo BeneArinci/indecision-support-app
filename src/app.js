@@ -1,17 +1,42 @@
-const template = (
-  <div>
-    <h1>This is a first template</h1>
-  </div>
-)
+const app = {
+  title: 'Indecision support app',
+  subtitle: 'Let your computer help you out!',
+  options: ['One', 'Two'],
+}
 
-const template2 = (
-  <div>
-    <h1>BeneArinci</h1>
-    <p>Age: 34</p>
-    <p>City: 34</p>
-  </div>
-)
+const onFormSubmit = (e) => {
+  e.preventDefault()
+  const option = e.target.elements.option.value
+  console.log(option)
+
+  if (option) {
+    app.options.push(option)
+    e.target.elements.option.value = ''
+    renderForm()
+  }
+}
+
+const onRemoveAllOptions = () => {
+  app.options = []
+  renderForm()
+}
 
 const appRoot = document.getElementById('app')
 
-ReactDOM.render(template2, appRoot)
+const renderForm = () => {
+  const template = (
+    <div>
+      <h1>{app.title}</h1>
+      <p>Items in the list: {app.options.length}</p>
+      <button onClick={onRemoveAllOptions}>Remove options</button>
+      <form onSubmit={onFormSubmit}>
+        <input type="text" name="option" />
+        <button>Add Option</button>
+      </form>
+    </div>
+  )
+
+  ReactDOM.render(template, appRoot)
+}
+
+renderForm()
