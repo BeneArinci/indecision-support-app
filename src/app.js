@@ -10,8 +10,8 @@ const Header = () => {
 const Options = ({ options }) => {
   return (
     <div>
-      {options.map((option) => (
-        <SingleOption optionDescription={option} />
+      {options.map((option, i) => (
+        <SingleOption key={i} optionDescription={option} />
       ))}
     </div>
   )
@@ -53,6 +53,4 @@ const IndecisionSupportApp = () => {
   )
 }
 
-const appRoot = document.getElementById('app')
-
-ReactDOM.render(<IndecisionSupportApp />, appRoot)
+export default IndecisionSupportApp
