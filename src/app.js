@@ -1,8 +1,10 @@
-const Header = () => {
+import { useState } from 'react'
+
+const Header = ({ title, subtitle }) => {
   return (
     <div>
-      <h1>Indecision support app</h1>
-      <h2>Let your computer help you making a decision!</h2>
+      <h1>{title}</h1>
+      <h2>{subtitle}</h2>
     </div>
   )
 }
@@ -39,15 +41,28 @@ const OptionSelectButton = () => {
   return <button>What should I do?</button>
 }
 
+const ResetOptionsButton = ({ onResetOptions }) => {
+  return <button onClick={onResetOptions}>Delete options</button>
+}
+
 const IndecisionSupportApp = () => {
+  const [options, setOptions] = useState([])
   const handleAddOption = (newOption) => {
-    console.log(newOption)
+    setOptions((currentOptions) => [...currentOptions, newOption])
   }
+  const handleResetOptions = () => {
+    setOptions([])
+  }
+
   return (
     <div>
-      <Header />
-      <Options options={['a', 'b', 'c']} />
+      <Header
+        title={'Indecision support app'}
+        subtitle={'Let your computer help you making a decision!'}
+      />
+      <Options options={options} />
       <AddOptionForm addOption={handleAddOption} />
+      <ResetOptionsButton onResetOptions={handleResetOptions} />
       <OptionSelectButton />
     </div>
   )
