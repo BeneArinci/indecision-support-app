@@ -21,10 +21,6 @@ const IndecisionSupportApp = () => {
 
   return (
     <div>
-      <Header
-        title={'Indecision support app'}
-        subtitle={'Let your computer help you making a decision!'}
-      />
       <OptionsBlock
         options={options}
         onResetOptions={handleResetOptions}

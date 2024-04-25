@@ -20,6 +20,7 @@
     "babel-preset-react": "^6.24.1",
     "global": "^4.4.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-modal": "^3.16.1"
   }
 }
