@@ -13,13 +13,23 @@ const IndecisionSupportApp = () => {
     setOptions([])
   }
 
+  const handleDeleteOption = (optionToDelete) => {
+    setOptions((prevOptions) =>
+      prevOptions.filter((option) => optionToDelete !== option)
+    )
+  }
+
   return (
     <div>
       <Header
         title={'Indecision support app'}
         subtitle={'Let your computer help you making a decision!'}
       />
-      <OptionsBlock options={options} onResetOptions={handleResetOptions} />
+      <OptionsBlock
+        options={options}
+        onResetOptions={handleResetOptions}
+        onDeleteOption={handleDeleteOption}
+      />
       <AddOptionForm addOption={handleAddOption} options={options} />
       <OptionSelectButton options={options} />
     </div>
