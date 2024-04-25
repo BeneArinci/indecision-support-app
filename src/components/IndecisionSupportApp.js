@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import { AddOptionForm } from './AddOptionForm'
-import { Header } from './Header'
-import { OptionSelectButton } from './OptionSelectButton'
 import { OptionsBlock } from './OptionsBlock'
+import OptionModal from './OptionModal'
+import OptionSelectButton from './OptionSelectButton'
 
 const IndecisionSupportApp = () => {
   const [options, setOptions] = useState([])
+  const [selectedOption, setSelectedOption] = useState(undefined)
+
   const handleAddOption = (newOption) => {
     setOptions((currentOptions) => [...currentOptions, newOption])
   }
@@ -19,6 +21,16 @@ const IndecisionSupportApp = () => {
     )
   }
 
+  const handleOptionPick = () => {
+    const randomNum = Math.floor(Math.random() * options.length)
+    const option = options[randomNum]
+    setSelectedOption(option)
+  }
+
+  const handleCloseModal = () => {
+    setSelectedOption(undefined)
+  }
+
   return (
     <div>
       <OptionsBlock
@@ -27,7 +39,14 @@ const IndecisionSupportApp = () => {
         onDeleteOption={handleDeleteOption}
       />
       <AddOptionForm addOption={handleAddOption} options={options} />
-      <OptionSelectButton options={options} />
+      <OptionSelectButton
+        handleOptionSelect={handleOptionPick}
+        isDisabled={!options.length}
+      />
+      <OptionModal
+        selectedOption={selectedOption}
+        onCloseModal={handleCloseModal}
+      />
     </div>
   )
 }
