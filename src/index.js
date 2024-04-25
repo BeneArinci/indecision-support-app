@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client'
-import IndecisionSupportApp from './App'
+import IndecisionSupportApp from './components/IndecisionSupportApp'
 
 const container = document.getElementById('app')
 const root = createRoot(container)
