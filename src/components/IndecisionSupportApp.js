@@ -27,7 +27,7 @@ const IndecisionSupportApp = () => {
     setSelectedOption(option)
   }
 
-  const handleCloseModal = () => {
+  const handleClearSelection = () => {
     setSelectedOption(undefined)
   }
 
@@ -45,7 +45,7 @@ const IndecisionSupportApp = () => {
       />
       <OptionModal
         selectedOption={selectedOption}
-        onCloseModal={handleCloseModal}
+        onClearSelection={handleClearSelection}
       />
     </div>
   )
