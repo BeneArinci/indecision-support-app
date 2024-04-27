@@ -1,8 +1,8 @@
 export const Header = ({ title, subtitle }) => {
   return (
-    <div>
-      <h1>{title}</h1>
-      <h2>{subtitle}</h2>
+    <div className="app-header">
+      <h1 className="app-header__title">{title}</h1>
+      <h2 className="app-header__subtitle">{subtitle}</h2>
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import { createRoot } from 'react-dom/client'
 import IndecisionSupportApp from './components/IndecisionSupportApp'
 import { Header } from './components/Header'
+import 'normalize.css'
 import './styles/styles.scss'
 
 const AppLayout = ({ children }) => {
