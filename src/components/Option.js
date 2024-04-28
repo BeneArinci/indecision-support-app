@@ -1,7 +1,9 @@
-export const Option = ({ optionDescription, onDeleteOption }) => {
+export const Option = ({ optionDescription, count, onDeleteOption }) => {
   return (
-    <div>
-      {optionDescription}
+    <div className="option">
+      <p className="option__text">
+        {count}. {optionDescription}
+      </p>
       <button
         className={'button button--link'}
         onClick={() => onDeleteOption(optionDescription)}

@@ -22,6 +22,7 @@ export const OptionsBlock = ({ options, onResetOptions, onDeleteOption }) => {
           options.map((option, i) => (
             <Option
               key={i}
+              count={i + 1}
               optionDescription={option}
               onDeleteOption={onDeleteOption}
             />
