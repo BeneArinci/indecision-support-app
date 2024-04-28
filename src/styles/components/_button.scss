@@ -1,10 +1,10 @@
 .button {
   background: $app-yellow;
   border: none;
-  font-weight: 500;
-  color: $off-black;
-  padding: $s-size;
   border-radius: $s-size;
+  color: $off-black;
+  font-weight: 500;
+  padding: $s-size;
 }
 
 .button:disabled {
@@ -22,14 +22,18 @@
 }
 
 .button--link--active:hover {
-  text-decoration: underline;
   background: none;
   color: $bright-yellow;
+  text-decoration: underline;
 }
 
 .button--main-button {
   font-size: $l-size;
   font-weight: 600;
-  width: 100%;
   padding: $m-size;
+  width: 100%;
+}
+
+.button--main-button--active:hover {
+  box-shadow: 0 0 10px yellow;
 }

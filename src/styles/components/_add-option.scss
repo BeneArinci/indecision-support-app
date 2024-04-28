@@ -4,10 +4,16 @@
 }
 
 .add-option__input {
-  color: white;
   background: $dark-grey;
   border: none;
+  color: white;
   flex-grow: 1;
-  padding: 0 $s-size;
   margin-right: 5px;
+  padding: 0 $s-size;
+}
+
+.add-option__input:focus-visible {
+  border: 1px solid white;
+  outline-color: $app-yellow;
+  outline-style: inset;
 }

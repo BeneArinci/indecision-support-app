@@ -2,18 +2,24 @@ import { useEffect, useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 
 export const AddOptionForm = ({ addOption, options }) => {
+  const [optionValue, setOptionValue] = useState('')
   const [isError, setIsError] = useState(false)
+
+  const onChange = (event) => {
+    setOptionValue(event.target.value)
+  }
   const notifyError = () => toast.error('Option already available in the list')
+
   const handleAddOption = (e) => {
     e.preventDefault()
-    const option = e.target.elements.option.value.trim()
+    const option = optionValue.trim()
     if (!!option) {
       if (options.includes(option)) {
         setIsError(true)
         return
       }
       addOption(option)
-      e.target.elements.option.value = ''
+      setOptionValue('')
     }
   }
 
@@ -32,8 +38,18 @@ export const AddOptionForm = ({ addOption, options }) => {
           type="text"
           name="option"
           placeholder="One of your options is.."
+          onChange={onChange}
+          value={optionValue}
+          autoComplete="off"
+          autoFocus
         />
-        <button className="button button--active">Add Option</button>
+        <button
+          className={`button ${!!optionValue && 'button--active'}`}
+          onSubmit={handleAddOption}
+          disabled={!optionValue}
+        >
+          Add Option
+        </button>
       </form>
       <Toaster
         position="bottom-center"
