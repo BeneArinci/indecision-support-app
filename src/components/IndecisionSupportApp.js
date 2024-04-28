@@ -38,12 +38,14 @@ const IndecisionSupportApp = () => {
           handleOptionSelect={handleOptionPick}
           isDisabled={!options.length}
         />
-        <OptionsBlock
-          options={options}
-          onResetOptions={handleResetOptions}
-          onDeleteOption={handleDeleteOption}
-        />
-        <AddOptionForm addOption={handleAddOption} options={options} />
+        <div className="widget">
+          <OptionsBlock
+            options={options}
+            onResetOptions={handleResetOptions}
+            onDeleteOption={handleDeleteOption}
+          />
+          <AddOptionForm addOption={handleAddOption} options={options} />
+        </div>
       </div>
       <OptionModal
         selectedOption={selectedOption}

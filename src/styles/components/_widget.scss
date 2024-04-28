@@ -1,0 +1,21 @@
+.widget {
+  background: $light-grey;
+}
+.widget-header {
+  background: $grey;
+  color: white;
+  padding: 0 $m-size;
+  display: flex;
+  justify-content: space-between;
+}
+
+.widget__body {
+  border-bottom: 1px solid lighten($light-grey, 10%);
+  margin: 0;
+  padding: $l-size;
+}
+
+.widget__empty-message {
+  color: white;
+  text-align: center;
+}
