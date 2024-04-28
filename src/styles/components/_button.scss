@@ -37,3 +37,14 @@
 .button--main-button--active:hover {
   box-shadow: 0 0 10px yellow;
 }
+
+.trash-button {
+  align-self: center;
+  color: $app-yellow;
+  font-size: $m-size;
+}
+
+.trash-button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
