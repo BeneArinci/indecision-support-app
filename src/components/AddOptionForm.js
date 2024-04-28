@@ -26,9 +26,14 @@ export const AddOptionForm = ({ addOption, options }) => {
 
   return (
     <>
-      <form onSubmit={handleAddOption}>
-        <input type="text" name="option" />
-        <button className="button">Add Option</button>
+      <form className="add-option-form" onSubmit={handleAddOption}>
+        <input
+          className={'add-option__input'}
+          type="text"
+          name="option"
+          placeholder="One of your options is.."
+        />
+        <button className="button button--active">Add Option</button>
       </form>
       <Toaster
         position="bottom-center"

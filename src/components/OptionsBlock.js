@@ -6,7 +6,7 @@ export const OptionsBlock = ({ options, onResetOptions, onDeleteOption }) => {
       <div className="widget-header">
         <h3>Your Options</h3>
         <button
-          className={'button button--link'}
+          className={`button button--link ${!!options.length && 'button--link--active'}`}
           onClick={onResetOptions}
           disabled={!options.length}
         >

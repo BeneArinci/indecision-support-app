@@ -11,14 +11,20 @@
   opacity: 50%;
 }
 
+.button--active:hover {
+  transform: scale(1.01);
+}
+
 .button--link {
   background: none;
   border: none;
   color: $app-yellow;
 }
 
-.button--link:hover {
+.button--link--active:hover {
   text-decoration: underline;
+  background: none;
+  color: $bright-yellow;
 }
 
 .button--main-button {

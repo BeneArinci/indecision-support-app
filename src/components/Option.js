@@ -5,7 +5,7 @@ export const Option = ({ optionDescription, count, onDeleteOption }) => {
         {count}. {optionDescription}
       </p>
       <button
-        className={'button button--link'}
+        className={'button button--link button--link--active'}
         onClick={() => onDeleteOption(optionDescription)}
       >
         Remove option
