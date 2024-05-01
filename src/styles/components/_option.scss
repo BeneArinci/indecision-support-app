@@ -7,5 +7,7 @@
 .option__text {
   color: white;
   font-weight: 500;
+  max-width: 95%;
   margin-right: $s-size;
+  word-break: break-all;
 }
