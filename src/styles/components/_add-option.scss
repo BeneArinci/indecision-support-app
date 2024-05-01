@@ -1,5 +1,6 @@
 .add-option-form {
   display: flex;
+  flex-direction: column;
   padding: $s-size;
 }
 
@@ -8,12 +9,21 @@
   border: none;
   color: white;
   flex-grow: 1;
-  margin-right: 5px;
-  padding: 0 $s-size;
+  margin: 0 0 $s-size 0;
+  padding: $s-size;
 }
 
 .add-option__input:focus-visible {
   border: 1px solid white;
   outline-color: $app-yellow;
   outline-style: inset;
+}
+
+@media (min-width: $desktop-viewport-breakpoint) {
+  .add-option-form {
+    flex-direction: row;
+  }
+  .add-option__input {
+    margin: 0 $s-size 0 0;
+  }
 }

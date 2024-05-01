@@ -30,6 +30,7 @@
 .button--main-button {
   font-size: $l-size;
   font-weight: 600;
+  margin-bottom: $s-size;
   padding: $m-size;
   width: 100%;
 }
@@ -47,4 +48,10 @@
 .trash-button:hover {
   transform: scale(1.1);
   cursor: pointer;
+}
+
+@media (min-width: $desktop-viewport-breakpoint) {
+  .button--main-button {
+    margin-bottom: $l-size;
+  }
 }

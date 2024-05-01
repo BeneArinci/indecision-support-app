@@ -1,6 +1,6 @@
 .app-header {
   background: $off-black;
-  margin-bottom: $xl-size;
+  margin-bottom: $m-size;
   padding: $m-size 0;
 }
 
@@ -15,4 +15,10 @@
   font-weight: 500;
   color: $app-yellow;
   margin: 0rem;
+}
+
+@media (min-width: $desktop-viewport-breakpoint) {
+  .app-header {
+    margin-bottom: $xl-size;
+  }
 }
